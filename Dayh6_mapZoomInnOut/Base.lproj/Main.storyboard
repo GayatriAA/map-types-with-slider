@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q56-sJ-ek8">
+                                <rect key="frame" x="118" y="521" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="HOb-I6-W8B"/>
+                                </constraints>
+                                <state key="normal" title="Detect Location"/>
+                                <connections>
+                                    <action selector="detectLocation_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LbV-Rg-WzE"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fge-Nz-hct">
+                                <rect key="frame" x="16" y="91" width="343" height="409"/>
+                            </mapView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8XM-mm-pbw">
+                                <rect key="frame" x="48" y="38" width="279" height="31"/>
+                                <connections>
+                                    <action selector="mySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="tsE-eS-Iyi"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KxD-2z-zlh">
+                                <rect key="frame" x="16" y="589" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Standard View"/>
+                                    <segment title="Satellite Vew"/>
+                                    <segment title="Hybrid View"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypes:" destination="BYZ-38-t0r" eventType="valueChanged" id="yR7-WW-G7J"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-q6-UGc">
+                                <rect key="frame" x="18" y="38" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E6z-cI-rjf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pws-fS-A5Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCJ-0J-UQc">
+                                <rect key="frame" x="329" y="38" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nHy-AM-Ida"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fge-Nz-hct" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1aM-lu-ajU"/>
+                            <constraint firstItem="p1p-q6-UGc" firstAttribute="top" secondItem="8XM-mm-pbw" secondAttribute="top" id="5dp-0N-23n"/>
+                            <constraint firstItem="fge-Nz-hct" firstAttribute="leading" secondItem="KxD-2z-zlh" secondAttribute="leading" id="7yX-eN-BoD"/>
+                            <constraint firstItem="Q56-sJ-ek8" firstAttribute="centerX" secondItem="KxD-2z-zlh" secondAttribute="centerX" id="81N-Me-Vxx"/>
+                            <constraint firstItem="8XM-mm-pbw" firstAttribute="centerX" secondItem="fge-Nz-hct" secondAttribute="centerX" id="IKn-fa-Faa"/>
+                            <constraint firstItem="8XM-mm-pbw" firstAttribute="leading" secondItem="p1p-q6-UGc" secondAttribute="trailing" constant="2" id="LWt-Oh-2RV"/>
+                            <constraint firstItem="8XM-mm-pbw" firstAttribute="top" secondItem="PCJ-0J-UQc" secondAttribute="top" id="OcZ-0l-aVr"/>
+                            <constraint firstItem="PCJ-0J-UQc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SEg-0p-gyD"/>
+                            <constraint firstItem="PCJ-0J-UQc" firstAttribute="baseline" secondItem="p1p-q6-UGc" secondAttribute="firstBaseline" id="SfK-Yx-gAJ"/>
+                            <constraint firstItem="Q56-sJ-ek8" firstAttribute="top" secondItem="fge-Nz-hct" secondAttribute="bottom" constant="21" id="Uqv-xi-Pbt"/>
+                            <constraint firstItem="fge-Nz-hct" firstAttribute="trailing" secondItem="KxD-2z-zlh" secondAttribute="trailing" id="WTM-ml-tnJ"/>
+                            <constraint firstItem="KxD-2z-zlh" firstAttribute="top" secondItem="Q56-sJ-ek8" secondAttribute="bottom" constant="38" id="Wte-gx-8mz"/>
+                            <constraint firstItem="fge-Nz-hct" firstAttribute="top" secondItem="p1p-q6-UGc" secondAttribute="bottom" constant="23" id="XpC-hx-XLK"/>
+                            <constraint firstItem="p1p-q6-UGc" firstAttribute="bottom" secondItem="8XM-mm-pbw" secondAttribute="bottom" id="dOg-Ax-Tjn"/>
+                            <constraint firstItem="8XM-mm-pbw" firstAttribute="bottom" secondItem="PCJ-0J-UQc" secondAttribute="bottom" id="gfG-Dr-WV1"/>
+                            <constraint firstItem="PCJ-0J-UQc" firstAttribute="trailing" secondItem="fge-Nz-hct" secondAttribute="trailing" id="kqS-yn-dAR"/>
+                            <constraint firstItem="p1p-q6-UGc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="nP8-8N-9Ti"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KxD-2z-zlh" secondAttribute="bottom" constant="50" id="nvR-xI-gDt"/>
+                            <constraint firstItem="PCJ-0J-UQc" firstAttribute="leading" secondItem="8XM-mm-pbw" secondAttribute="trailing" constant="4" id="quG-BE-jvW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="fge-Nz-hct" id="Ek3-6w-Vtj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="135.38230884557723"/>
+        </scene>
+    </scenes>
+</document>
